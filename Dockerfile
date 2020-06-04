@@ -5,7 +5,6 @@ RUN apt-get update \
     wget \
     vim
 
-
 COPY requirements.txt /requirements.txt
 RUN pip install -r requirements.txt
 

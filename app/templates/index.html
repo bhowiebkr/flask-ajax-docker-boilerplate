@@ -1,20 +1,20 @@
 <html>
 
 <head>
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="{{
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="{{
         url_for('static', filename='bootstrap.min.css') }}">
 
-    <!-- jQuery -->
-    <script type=text/javascript src="{{
+  <!-- jQuery -->
+  <script type=text/javascript src="{{
         url_for('static', filename='jquery-3.5.1.min.js') }}"></script>
 
-    <title>Flask, AJAX, in Docker</title>
+  <title>Flask, AJAX, in Docker</title>
 </head>
 
 <body>
-    <div class="container">
-        <script type=text/javascript>
+  <div class="container">
+    <script type=text/javascript>
             $(function() {
               $('a#calculate').bind('click', function() {
                 $.getJSON($SCRIPT_ROOT + '/_add_numbers', {
@@ -27,15 +27,15 @@
               });
             });
           </script>
-        <br><br>
-        <h1>Flask, AJAX, jQuery in Docker test</h1>
-        <p><input type=text size=5 name=a> +
-            <input type=text size=5 name=b> =
-            <span id=result>?</span>
-        <p><a href=# id=calculate>calculate server side</a>
-    </div>
+    <br><br>
+    <h1>Flask, AJAX, jQuery in Docker test</h1>
+    <p><input type=text size=5 name=a> +
+      <input type=text size=5 name=b> =
+      <span id=result>?</span>
+    <p><a href=# id=calculate>calculate server side</a>
+  </div>
 
-    <script type=text/javascript>
+  <script type=text/javascript>
     $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
     </script>
 </body>
