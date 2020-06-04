@@ -1,0 +1,16 @@
+version: "3.7"
+services: 
+    flask-ajax-docker-boilerplate:
+        build:
+            context: ./
+            dockerfile: Dockerfile
+
+        ports:
+            - 5400:5400
+
+        networks:
+            - boilerplate-network
+
+networks:
+    boilerplate-network:
+        driver: bridge
